@@ -6,13 +6,10 @@ import TaskListHead from './task-list-head';
 export default class TaskList extends React.Component {
 
   renderItems() {
-    console.log("xxx");
     return _.map(this.props.todos, (todo, index) => <TaskListItem key={index} {...todo} />);
   }
 
   render() {
-
-    console.log(this.props);
     return(
       <table>
         <TaskListHead />

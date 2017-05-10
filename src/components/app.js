@@ -1,5 +1,6 @@
 import React from 'react';
 import TaskList from './task-list';
+import TaskCreateNew from './task-create-new.js';
 
 var todos = [
     {
@@ -26,8 +27,21 @@ export default class App extends React.Component {
     return(
       <div>
         <h1>Hello World</h1>
-        <TaskList todos={this.state.todos} />
+        <TaskCreateNew
+          createTask={this.createTask.bind(this)} />
+        <TaskList
+          todos={this.state.todos} />
       </div>
     );
+  }
+
+  createTask(task) {
+    this.state.todos.push({
+      task,
+      isCompleted: false
+    });
+    this.setState({
+      todos: this.state.todos
+    });
   }
 }
