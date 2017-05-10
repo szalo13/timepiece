@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import TaskListItem from './task-list-item';
+import TaskListHead from './task-list-head';
 
 export default class TaskList extends React.Component {
 
@@ -14,12 +15,7 @@ export default class TaskList extends React.Component {
     console.log(this.props);
     return(
       <table>
-        <thead>
-          <tr>
-            <th>Task</th>
-            <th>isCompleted</th>
-          </tr>
-        </thead>
+        <TaskListHead />
         <tbody>
           {this.renderItems()}
         </tbody>
